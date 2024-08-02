@@ -8,5 +8,6 @@ export type Slab = {
     gradingCompany: string,
     certNumber: string,
     grade: number,
-    soldValue: number
+    soldValue: number,
+    imageURL: string
 }
