@@ -4,13 +4,13 @@ import { Slab } from '@/types/index';
 import JapaneseFlag from "@/images/jp_flag.svg";
 import EnglishFlag from "@/images/eng_flag.svg";
 import KoreanFlag from "@/images/kor_flag.svg";
-import {sl} from "date-fns/locale";
+import styles from "@/styles/HideOnMobile.module.css";
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
     return (
         <div className="card mb-3">
             <div className="row g-0">
-                <div className="col-md-4">
+                <div className={`col-md-4 ${styles.hideOnMobile}`}>
                     <img
                         src={slab.imageURL}
                         className="img-fluid rounded-start m-3"
@@ -19,16 +19,16 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                     />
                 </div>
                 <div className="col-md-8">
-                    <div className="card-body">
+                <div className="card-body">
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col">
+                                    <div className="col-10">
                                         <p className={"h3"}>
                                             {slab.pokemon}
                                         </p>
                                     </div>
-                                    <div className="col">
+                                    <div className="col-2">
                                         {FlagSelector(slab.language)}
                                     </div>
                                 </div>
