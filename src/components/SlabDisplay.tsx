@@ -14,45 +14,50 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
     return (
         <div className={`card mb-3 ${slab.sold || !slab.forSale ? "border-danger" : "border-success" }`}>
             <div className="row g-0">
-                <div className={`col-md-4 ${styles.hideOnMobile}`}>
+                <div className={`col-md-3`}>
                     <img
                         src={slab.imageURL}
-                        className="img-fluid rounded-start m-3"
+                        className="img-fluid rounded-start m-3 mx-auto d-block d-md-none"
+                        style={{maxHeight: 200}}
+                        alt="Card image"
+                    />
+                    <img
+                        src={slab.imageURL}
+                        className="img-fluid rounded-start m-3 d-none d-md-block"
                         style={{maxHeight: 300}}
                         alt="Card image"
                     />
                 </div>
-                <div className="col-md-8">
-                <div className="card-body">
+                <div className="col-md-9">
+                    <div className="card-body">
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col-8">
+                                    <div className="d-flex justify-content-between align-items-center">
                                         <p className={"h3"}>
                                             {slab.name} {slab.sold ? "(SOLD)" : ""}
                                         </p>
-                                    </div>
-                                    <div className="col-4 d-flex align-items-center">
-                                        <div className="mx-5">
-                                            {GradingCompanyLogo(slab.gradingCompany)}
-                                        </div>
-                                        <div>
+                                        <div className="ms-auto mb-3">
                                             {FlagSelector(slab.language)}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div
-                                        style={{fontSize: "1.2rem"}}
-                                    >
-                                    {slab.gradingCompany + " " + slab.grade}
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <div style={{fontSize: "1.2rem"}}>
+                                            {slab.gradingCompany + " " + slab.grade}
+                                        </div>
+                                        <div className="ms-auto"
+                                             style={{"paddingLeft": slab.gradingCompany === "Ace" ? "24px" : ""}}>
+                                            {GradingCompanyLogo(slab.gradingCompany)}
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col">{slab.setName}</div>
-                                    <div className="col text-end">{slab.cardNumber}</div>
+                                    <div className="col-8">{slab.setName}</div>
+                                    <div className="col-4 text-end">{slab.cardNumber}</div>
                                 </div>
                             </li>
                             <li className="list-group-item">{CertVerificationLink(slab.certNumber, slab.gradingCompany)}</li>
@@ -88,9 +93,12 @@ const FlagSelector = (set: string) => {
 
 const GradingCompanyLogo = (gradingCompany: string) => {
     let image = AceLogo;
+    let style = { maxWidth: 60, maxHeight: 30, paddingLeft: "0" };
+
     switch (gradingCompany) {
         case "Ace":
             image = AceLogo
+            style = { ...style, paddingLeft: "24px" };
             break;
         case "PSA":
             image = PsaLogo
@@ -107,7 +115,7 @@ const GradingCompanyLogo = (gradingCompany: string) => {
         src={image}
         alt="Grading Company Logo"
         className="rounded row"
-        style={{maxWidth: 60, maxHeight: 30}}
+        style={style}
     />
 }
 
