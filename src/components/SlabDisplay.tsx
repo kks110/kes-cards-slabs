@@ -8,7 +8,7 @@ import styles from "@/styles/HideOnMobile.module.css";
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
     return (
-        <div className="card mb-3">
+        <div className={`card mb-3 ${slab.sold || !slab.forSale ? "border-danger" : "border-success" }`}>
             <div className="row g-0">
                 <div className={`col-md-4 ${styles.hideOnMobile}`}>
                     <img
@@ -25,7 +25,7 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 <div className="row">
                                     <div className="col-10">
                                         <p className={"h3"}>
-                                            {slab.pokemon}
+                                            {slab.name} {slab.sold ? "(SOLD)" : ""}
                                         </p>
                                     </div>
                                     <div className="col-2">
@@ -44,17 +44,11 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                             <li className="list-group-item">
                                 <div className="row">
                                     <div className="col">{slab.setName}</div>
-                                    <div className="col text-end">{slab.setNumber}</div>
+                                    <div className="col text-end">{slab.cardNumber}</div>
                                 </div>
                             </li>
                             <li className="list-group-item">{CertVerificationLink(slab.certNumber, slab.gradingCompany)}</li>
                             <li className="list-group-item">Cost: £{slab.cost.toFixed(2)}</li>
-                            <li
-                                className="list-group-item"
-                                style={{color: slab.soldValue > 0.00 ? slab.soldValue > slab.cost ? "green" : "red" : "black"}}
-                            >
-                                Sold Value: £{slab.soldValue.toFixed(2)}
-                            </li>
                         </ul>
                     </div>
                 </div>

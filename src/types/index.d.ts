@@ -1,13 +1,18 @@
 
 export type Slab = {
-    pokemon: string,
-    setNumber: string,
+    name: string,
+    cardNumber: string,
     setName: string,
-    language: string,
+    language: "japanese" | "english" | "korean",
     cost: number,
-    gradingCompany: string,
+    gradingCompany: "Ace" | "PSA" | "SGC" | "CGC" | "BGS"
     certNumber: string,
     grade: number,
     soldValue: number,
-    imageURL: string
+    imageURL: string,
+    sold: boolean,
+    forSale: boolean,
+    franchise: Franchise
 }
+
+export type Franchise = "pokemon" | "lorcana"
