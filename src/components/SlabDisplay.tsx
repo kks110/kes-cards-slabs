@@ -4,6 +4,10 @@ import { Slab } from '@/types/index';
 import JapaneseFlag from "@/images/jp_flag.svg";
 import EnglishFlag from "@/images/eng_flag.svg";
 import KoreanFlag from "@/images/kor_flag.svg";
+import AceLogo from "@/images/ace_grading_logo.svg";
+import CgcLogo from "@/images/cgc_logo.svg";
+import PsaLogo from "@/images/psa_logo.svg";
+import SgcLogo from "@/images/sgc_logo.svg";
 import styles from "@/styles/HideOnMobile.module.css";
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
@@ -23,21 +27,25 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">
                                 <div className="row">
-                                    <div className="col-10">
+                                    <div className="col-8">
                                         <p className={"h3"}>
                                             {slab.name} {slab.sold ? "(SOLD)" : ""}
                                         </p>
                                     </div>
-                                    <div className="col-2">
-                                        {FlagSelector(slab.language)}
+                                    <div className="col-4 d-flex align-items-center">
+                                        <div className="mx-5">
+                                            {GradingCompanyLogo(slab.gradingCompany)}
+                                        </div>
+                                        <div>
+                                            {FlagSelector(slab.language)}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div
-                                        className={"alert text-center" + (slab.grade === 10 ? " alert-success" : " alert-secondary")}
                                         style={{fontSize: "1.2rem"}}
                                     >
-                                        {slab.gradingCompany} {slab.grade}
+                                    {slab.gradingCompany + " " + slab.grade}
                                     </div>
                                 </div>
                             </li>
@@ -75,6 +83,31 @@ const FlagSelector = (set: string) => {
         alt="Flag"
         className="rounded row float-end border border-dark"
         style={{maxWidth: 40, height: "auto"}}
+    />
+}
+
+const GradingCompanyLogo = (gradingCompany: string) => {
+    let image = AceLogo;
+    switch (gradingCompany) {
+        case "Ace":
+            image = AceLogo
+            break;
+        case "PSA":
+            image = PsaLogo
+            break;
+        case "SGC":
+            image = SgcLogo
+            break;
+        case "CGC":
+            image = CgcLogo
+            break;
+    }
+
+    return <Image
+        src={image}
+        alt="Grading Company Logo"
+        className="rounded row"
+        style={{maxWidth: 60, maxHeight: 30}}
     />
 }
 
