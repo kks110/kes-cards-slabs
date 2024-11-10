@@ -8,6 +8,7 @@ import AceLogo from "@/images/ace_grading_logo.svg";
 import CgcLogo from "@/images/cgc_logo.svg";
 import PsaLogo from "@/images/psa_logo.svg";
 import SgcLogo from "@/images/sgc_logo.svg";
+import BgsLogo from "@/images/bgs_logo.svg";
 import styles from "@/styles/HideOnMobile.module.css";
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
@@ -35,7 +36,7 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 <div className="row">
                                     <div className="d-flex justify-content-between align-items-center">
                                         <p className={"h3"}>
-                                            {slab.name} {slab.sold ? "(SOLD)" : ""}
+                                            {slab.cardName} {slab.sold ? "(SOLD)" : ""}
                                         </p>
                                         <div className="ms-auto mb-3">
                                             {FlagSelector(slab.language)}
@@ -61,11 +62,23 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 </div>
                             </li>
                             <li className="list-group-item">{CertVerificationLink(slab.certNumber, slab.gradingCompany)}</li>
-                            <li className="list-group-item">Cost: £{slab.cost.toFixed(2)}</li>
-                        </ul>
-                    </div>
+                            {slab.sold ? (
+                                slab.soldValue ? (
+                                    <li className="list-group-item">Sold for: £{slab.soldValue.toFixed(2)}</li>
+                                ) : (
+                                    <li className="list-group-item">{slab.notes}</li>
+                                )
+                            ) : (
+                                <>
+                                    <li className="list-group-item">Price Charting: {slab.priceCharting}</li>
+                                    <li className="list-group-item">PSA: {slab.psa}</li>
+                                    <li className="list-group-item">eBay: {slab.ebay}</li>
+                                </>
+                            )}
+                    </ul>
                 </div>
             </div>
+        </div>
         </div>
     );
 }
@@ -73,13 +86,13 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
 const FlagSelector = (set: string) => {
     let image = EnglishFlag;
     switch (set) {
-        case "japanese":
+        case "Jp":
             image = JapaneseFlag
             break;
-        case "english":
+        case "Eng":
             image = EnglishFlag
             break;
-        case "korean":
+        case "Kor":
             image = KoreanFlag
     }
 
@@ -109,6 +122,9 @@ const GradingCompanyLogo = (gradingCompany: string) => {
         case "CGC":
             image = CgcLogo
             break;
+        case "BGS":
+            image = BgsLogo
+            break;
     }
 
     return <Image
@@ -119,20 +135,23 @@ const GradingCompanyLogo = (gradingCompany: string) => {
     />
 }
 
-const CertVerificationLink = (certNumber: string, gradingCompany: string) => {
+const CertVerificationLink = (certNumber: number, gradingCompany: string) => {
     let link = "";
     switch (gradingCompany) {
         case "Ace":
             link = `https://acegrading.com/cert/${certNumber}`
             break;
         case "PSA":
-            link = `https://www.psacard.com/cert/${certNumber}`
+            link = `https://www.psacard.com/cert/${certNumber}/psa`
             break;
         case "SGC":
             link = `https://gosgc.com/cert-code-lookup`
             break;
         case "CGC":
             link = `https://www.cgccards.com/certlookup/${certNumber}`
+            break;
+        case "BGS":
+            link = `https://www.beckett.com/grading/card-lookup?item_id=${certNumber}&item_type=BGS`
             break;
     }
 

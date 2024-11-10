@@ -1,18 +1,23 @@
 
 export type Slab = {
-    name: string,
+    owner: "K" | "E" | "KES",
+    forSale: boolean,
+    cardName: string,
     cardNumber: string,
     setName: string,
-    language: "japanese" | "english" | "korean",
+    tcg: "Pokemon" | "Lorcana"
+    language: "Jp" | "Eng" | "Kor",
     cost: number,
     gradingCompany: "Ace" | "PSA" | "SGC" | "CGC" | "BGS"
-    certNumber: string,
     grade: number,
-    soldValue: number,
-    imageURL: string,
+    certNumber: number,
+    priceCharting: number | null,
+    psa: number | null,
+    ebay: number | null,
     sold: boolean,
-    forSale: boolean,
-    franchise: Franchise
+    soldValue: number | null,
+    dateSold: string | null,
+    notes: string | null,
+    imageURL: string,
 }
 
-export type Franchise = "pokemon" | "lorcana"

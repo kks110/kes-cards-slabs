@@ -14,17 +14,17 @@ export default function Home() {
     const filteredSlabs = slabs.filter(slab => {
         const query = searchQuery.toLowerCase();
         const matchesSearchQuery = (
-            slab.name.toLowerCase().includes(query) ||
+            slab.cardName.toLowerCase().includes(query) ||
             slab.cardNumber.toLowerCase().includes(query) ||
             slab.setName.toLowerCase().includes(query) ||
-            slab.certNumber.toLowerCase().includes(query) ||
+            slab.certNumber.toString().includes(query) ||
             slab.grade.toString().includes(query)
         );
         const matchesLanguage = selectedLanguage ? slab.language === selectedLanguage : true;
-        const matchesFranchise = selectedFranchise ? slab.franchise === selectedFranchise : true;
+        const matchesFranchise = selectedFranchise ? slab.tcg === selectedFranchise : true;
         const matchesGradingCompany = selectedGradingCompany ? slab.gradingCompany === selectedGradingCompany : true;
-        const matchesSold = selectSold ? slab.sold : true;
-        const matchesForSale = selectForSale ? slab.forSale : true;
+        const matchesSold = selectSold === slab.sold;
+        const matchesForSale = selectForSale === slab.forSale;
         return matchesSearchQuery && matchesLanguage && matchesFranchise && matchesGradingCompany && matchesSold && matchesForSale;
     });
 
@@ -52,9 +52,9 @@ export default function Home() {
                           onChange={e => setSelectedLanguage(e.target.value)}
                       >
                           <option value="">All Languages</option>
-                          <option value="japanese">Japanese</option>
-                          <option value="english">English</option>
-                          <option value="korean">Korean</option>
+                          <option value="Jp">Japanese</option>
+                          <option value="Eng">English</option>
+                          <option value="Kor">Korean</option>
                       </select>
                   </div>
                   <div className="col-sm-4 my-1">
@@ -64,8 +64,8 @@ export default function Home() {
                           onChange={e => setSelectedFranchise(e.target.value)}
                       >
                           <option value="">All Franchises</option>
-                          <option value="pokemon">Pokemon</option>
-                          <option value="lorcana">Lorcana</option>
+                          <option value="Pokemon">Pokemon</option>
+                          <option value="Lorcana">Lorcana</option>
                       </select>
                   </div>
                   <div className="col-sm-4 my-1">
