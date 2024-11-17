@@ -11,9 +11,7 @@ export type Slab = {
     gradingCompany: "Ace" | "PSA" | "SGC" | "CGC" | "BGS"
     grade: number,
     certNumber: number,
-    priceCharting: number | null,
-    psa: number | null,
-    ebay: number | null,
+    price: number | null,
     sold: boolean,
     soldValue: number | null,
     dateSold: string | null,

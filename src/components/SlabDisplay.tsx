@@ -70,9 +70,7 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 )
                             ) : (
                                 <>
-                                    <li className="list-group-item">Price Charting: {slab.priceCharting}</li>
-                                    <li className="list-group-item">PSA: {slab.psa}</li>
-                                    <li className="list-group-item">eBay: {slab.ebay}</li>
+                                    <li className="list-group-item">Price: {slab.price}</li>
                                 </>
                             )}
                     </ul>
