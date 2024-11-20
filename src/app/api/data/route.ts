@@ -1,10 +1,9 @@
-import type { NextApiRequest } from 'next';
+import type { NextRequest } from 'next/server'
 
 export const runtime = 'edge'
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
     try {
-        console.log(process.env.AUTH_KEY)
         const response = await fetch('https://kes-api.kks110.workers.dev', {
             method: 'GET',
             headers: {

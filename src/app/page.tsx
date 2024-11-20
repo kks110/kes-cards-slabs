@@ -1,9 +1,78 @@
 "use client";
-import React, {useState} from "react";
-import { slabs } from "@/data/slabs";
+import React, {useEffect, useState} from "react";
 import SlabDisplay from "@/components/SlabDisplay";
+import {ApiResponse, Slab} from "@/types";
+
+async function fetchData(): Promise<ApiResponse[]> {
+    const response = await fetch('/api/data');
+    if (!response.ok) {
+        throw new Error('Failed to fetch data');
+    }
+    const data: ApiResponse[] = await response.json();
+    return data;
+}
+
+function mapApiResponseToSlab(apiResponse: ApiResponse): Slab {
+    if (!apiResponse) throw new Error("Invalid API response");
+
+    const mappedSlab: Slab = {
+        owner: validateOwner(apiResponse.owner),
+        forSale: apiResponse.for_sale === 1,
+        cardName: apiResponse.card_name,
+        cardNumber: apiResponse.card_number,
+        setName: apiResponse.set_name,
+        tcg: validateTcg(apiResponse.tcg),
+        language: validateLanguage(apiResponse.language),
+        cost: apiResponse.cost,
+        gradingCompany: validateGradingCompany(apiResponse.grading_company),
+        grade: apiResponse.grade,
+        certNumber: Number(apiResponse.cert_number),
+        price: apiResponse.price,
+        sold: apiResponse.sold === 1,
+        soldValue: apiResponse.sold_value,
+        dateSold: apiResponse.date_sold,
+        notes: apiResponse.notes || null,
+        imageURL: apiResponse.image_url,
+    };
+
+    return mappedSlab;
+}
+
+function validateOwner(owner: string): "K" | "E" | "KES" {
+    const validOwners = ["K", "E", "KES"];
+    if (!validOwners.includes(owner)) {
+        throw new Error(`Invalid owner: ${owner}`);
+    }
+    return owner as "K" | "E" | "KES";
+}
+
+function validateTcg(tcg: string): "Pokemon" | "Lorcana" {
+    const validTcgs = ["Pokemon", "Lorcana"];
+    if (!validTcgs.includes(tcg)) {
+        throw new Error(`Invalid tcg: ${tcg}`);
+    }
+    return tcg as "Pokemon" | "Lorcana";
+}
+
+function validateLanguage(language: string): "Jp" | "Eng" | "Kor" {
+    const validLanguages = ["Jp", "Eng", "Kor"];
+    if (!validLanguages.includes(language)) {
+        throw new Error(`Invalid language: ${language}`);
+    }
+    return language as "Jp" | "Eng" | "Kor";
+}
+
+function validateGradingCompany(company: string): "Ace" | "PSA" | "SGC" | "CGC" | "BGS" {
+    const validCompanies = ["Ace", "PSA", "SGC", "CGC", "BGS"];
+    if (!validCompanies.includes(company)) {
+        throw new Error(`Invalid grading company: ${company}`);
+    }
+    return company as "Ace" | "PSA" | "SGC" | "CGC" | "BGS";
+}
 
 export default function Home() {
+    const [slabs, setSlabs] = useState<Slab[]>([]);
+    const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedLanguage, setSelectedLanguage] = useState("");
     const [selectedFranchise, setSelectedFranchise] = useState("");
@@ -27,6 +96,14 @@ export default function Home() {
         const matchesForSale = selectForSale === slab.forSale;
         return matchesSearchQuery && matchesLanguage && matchesFranchise && matchesGradingCompany && matchesSold && matchesForSale;
     });
+
+    useEffect(() => {
+        fetchData().then(data  => {
+            const slabs = data.map( (slab: ApiResponse) => mapApiResponseToSlab(slab));
+            setSlabs(slabs);
+            setLoading(false);
+        });
+    }, []);
 
 
     return (
@@ -83,8 +160,6 @@ export default function Home() {
                       </select>
                   </div>
               </div>
-
-
               <div className="row mb-3">
                   <div className="d-flex">
                       <div className="form-check me-3">
@@ -111,6 +186,7 @@ export default function Home() {
                       </div>
                   </div>
               </div>
+                {loading && <div className="text-center">Loading...</div>}
               <div className="row">
                   {filteredSlabs.map((slab, index) => (
                       <div className="col-md-6 mb-3" key={index}>
