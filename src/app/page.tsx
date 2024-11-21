@@ -2,73 +2,7 @@
 import React, {useEffect, useState} from "react";
 import SlabDisplay from "@/components/SlabDisplay";
 import {ApiResponse, Slab} from "@/types";
-
-async function fetchData(): Promise<ApiResponse[]> {
-    const response = await fetch('/api/data');
-    if (!response.ok) {
-        throw new Error('Failed to fetch data');
-    }
-    const data: ApiResponse[] = await response.json();
-    return data;
-}
-
-function mapApiResponseToSlab(apiResponse: ApiResponse): Slab {
-    if (!apiResponse) throw new Error("Invalid API response");
-
-    const mappedSlab: Slab = {
-        owner: validateOwner(apiResponse.owner),
-        forSale: apiResponse.for_sale === 1,
-        cardName: apiResponse.card_name,
-        cardNumber: apiResponse.card_number,
-        setName: apiResponse.set_name,
-        tcg: validateTcg(apiResponse.tcg),
-        language: validateLanguage(apiResponse.language),
-        cost: apiResponse.cost,
-        gradingCompany: validateGradingCompany(apiResponse.grading_company),
-        grade: apiResponse.grade,
-        certNumber: Number(apiResponse.cert_number),
-        price: apiResponse.price,
-        sold: apiResponse.sold === 1,
-        soldValue: apiResponse.sold_value,
-        dateSold: apiResponse.date_sold,
-        notes: apiResponse.notes || null,
-        imageURL: apiResponse.image_url,
-    };
-
-    return mappedSlab;
-}
-
-function validateOwner(owner: string): "K" | "E" | "KES" {
-    const validOwners = ["K", "E", "KES"];
-    if (!validOwners.includes(owner)) {
-        throw new Error(`Invalid owner: ${owner}`);
-    }
-    return owner as "K" | "E" | "KES";
-}
-
-function validateTcg(tcg: string): "Pokemon" | "Lorcana" {
-    const validTcgs = ["Pokemon", "Lorcana"];
-    if (!validTcgs.includes(tcg)) {
-        throw new Error(`Invalid tcg: ${tcg}`);
-    }
-    return tcg as "Pokemon" | "Lorcana";
-}
-
-function validateLanguage(language: string): "Jp" | "Eng" | "Kor" {
-    const validLanguages = ["Jp", "Eng", "Kor"];
-    if (!validLanguages.includes(language)) {
-        throw new Error(`Invalid language: ${language}`);
-    }
-    return language as "Jp" | "Eng" | "Kor";
-}
-
-function validateGradingCompany(company: string): "Ace" | "PSA" | "SGC" | "CGC" | "BGS" {
-    const validCompanies = ["Ace", "PSA", "SGC", "CGC", "BGS"];
-    if (!validCompanies.includes(company)) {
-        throw new Error(`Invalid grading company: ${company}`);
-    }
-    return company as "Ace" | "PSA" | "SGC" | "CGC" | "BGS";
-}
+import {fetchData, mapApiResponseToSlab} from "@/data/api";
 
 export default function Home() {
     const [slabs, setSlabs] = useState<Slab[]>([]);
@@ -186,7 +120,21 @@ export default function Home() {
                       </div>
                   </div>
               </div>
-                {loading && <div className="text-center">Loading...</div>}
+              {loading && (
+                  <div className="container">
+                      <div className="row justify-content-center">
+                          <div className="col-auto">
+                              <h1 className="m-5">Loading...</h1>
+                          </div>
+                      </div>
+                      <div className="row justify-content-center">
+                          <div className="col-auto">
+                              <div className="spinner-border text-primary m-5" style={{width: 100, height: 100, borderWidth: 10}}
+                                   role="status"></div>
+                          </div>
+                      </div>
+                  </div>
+              )}
               <div className="row">
                   {filteredSlabs.map((slab, index) => (
                       <div className="col-md-6 mb-3" key={index}>
