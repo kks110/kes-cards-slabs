@@ -18,10 +18,13 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <BootstrapClient />
-      </body>
+      <head>
+          <link rel="icon" href="/favicon.ico"  type="image/x-icon" sizes="256x256"/>
+      </head>
+          <body className={inter.className}>
+            {children}
+            <BootstrapClient />
+          </body>
       </html>
   );
 }
