@@ -8,6 +8,7 @@ export default function Home() {
     const [slabs, setSlabs] = useState<Slab[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
+    const [gradeSearchQuery, setGradeSearchQuery] = useState("");
     const [selectedLanguage, setSelectedLanguage] = useState("");
     const [selectedFranchise, setSelectedFranchise] = useState("");
     const [selectedGradingCompany, setSelectedGradingCompany] = useState("");
@@ -23,12 +24,13 @@ export default function Home() {
             slab.certNumber.toString().includes(query) ||
             slab.grade.toString().includes(query)
         );
+        const matchesGradeQuery = slab.grade.toString().includes(gradeSearchQuery);
         const matchesLanguage = selectedLanguage ? slab.language === selectedLanguage : true;
         const matchesFranchise = selectedFranchise ? slab.tcg === selectedFranchise : true;
         const matchesGradingCompany = selectedGradingCompany ? slab.gradingCompany === selectedGradingCompany : true;
         const matchesSold = selectSold === slab.sold;
         const matchesForSale = selectForSale === slab.forSale;
-        return matchesSearchQuery && matchesLanguage && matchesFranchise && matchesGradingCompany && matchesSold && matchesForSale;
+        return matchesGradeQuery && matchesSearchQuery && matchesLanguage && matchesFranchise && matchesGradingCompany && matchesSold && matchesForSale;
     });
 
     useEffect(() => {
@@ -56,7 +58,7 @@ export default function Home() {
                           onChange={e => setSearchQuery(e.target.value)}
                       />
                   </div>
-                  <div className="col-sm-4 my-1">
+                  <div className="col-sm-3 my-1">
                       <select
                           className="form-select"
                           value={selectedLanguage}
@@ -68,7 +70,7 @@ export default function Home() {
                           <option value="Kor">Korean</option>
                       </select>
                   </div>
-                  <div className="col-sm-4 my-1">
+                  <div className="col-sm-3 my-1">
                       <select
                           className="form-select"
                           value={selectedFranchise}
@@ -79,7 +81,7 @@ export default function Home() {
                           <option value="Lorcana">Lorcana</option>
                       </select>
                   </div>
-                  <div className="col-sm-4 my-1">
+                  <div className="col-sm-3 my-1">
                       <select
                           className="form-select"
                           value={selectedGradingCompany}
@@ -92,6 +94,15 @@ export default function Home() {
                           <option value="CGC">CGC</option>
                           <option value="BGS">BGS</option>
                       </select>
+                  </div>
+                  <div className="col-sm-3 my-1">
+                      <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Search Grades"
+                          value={gradeSearchQuery}
+                          onChange={e => setGradeSearchQuery(e.target.value)}
+                      />
                   </div>
               </div>
               <div className="row mb-3">
