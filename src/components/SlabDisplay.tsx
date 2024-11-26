@@ -18,13 +18,13 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                 <div className={`col-md-3`}>
                     <img
                         src={slab.imageURL}
-                        className="img-fluid rounded-start m-3 mx-auto d-block d-md-none"
+                        className="img-fluid rounded m-3 mx-auto d-block d-md-none"
                         style={{maxHeight: 200}}
                         alt="Card image"
                     />
                     <img
                         src={slab.imageURL}
-                        className="img-fluid rounded-start m-3 d-none d-md-block"
+                        className="img-fluid rounded m-3 d-none d-md-block"
                         style={{maxHeight: 300}}
                         alt="Card image"
                     />
