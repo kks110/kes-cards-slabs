@@ -70,7 +70,7 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 )
                             ) : (
                                 <>
-                                    <li className="list-group-item">Price: {slab.price}</li>
+                                    <li className="list-group-item">{SlabPrice(slab)}</li>
                                 </>
                             )}
                     </ul>
@@ -79,6 +79,14 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
         </div>
         </div>
     );
+}
+
+const SlabPrice = (slab: Slab) => {
+    if (slab.price) {
+        return "Price: £" + slab.price.toFixed(2)
+    } else {
+        return slab.notes
+    }
 }
 
 const FlagSelector = (set: string) => {
