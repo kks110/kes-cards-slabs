@@ -10,25 +10,17 @@ import PsaLogo from "@/images/psa_logo.svg";
 import SgcLogo from "@/images/sgc_logo.svg";
 import BgsLogo from "@/images/bgs_logo.svg";
 import styles from "@/styles/HideOnMobile.module.css";
+import SlabImage from "@/components/SlabImage";
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
+    if (slab.aceLabelURL) {
+        console.log("aceLabelURL: ", slab.aceLabelURL);
+    }
+
     return (
         <div className={`card mb-3 ${slab.sold || !slab.forSale ? "border-danger" : "border-success" }`}>
             <div className="row g-0">
-                <div className={`col-md-3`}>
-                    <img
-                        src={slab.imageURL}
-                        className="img-fluid rounded m-3 mx-auto d-block d-md-none"
-                        style={{maxHeight: 200}}
-                        alt="Card image"
-                    />
-                    <img
-                        src={slab.imageURL}
-                        className="img-fluid rounded m-3 d-none d-md-block"
-                        style={{maxHeight: 300}}
-                        alt="Card image"
-                    />
-                </div>
+                < SlabImage slab={slab} />
                 <div className="col-md-9">
                     <div className="card-body">
                         <ul className="list-group list-group-flush">

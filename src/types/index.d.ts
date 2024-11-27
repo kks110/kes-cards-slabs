@@ -17,6 +17,7 @@ export type Slab = {
     dateSold: string | null,
     notes: string | null,
     imageURL: string,
+    aceLabelURL: string | null,
 };
 
 export type ApiResponse = {
@@ -38,4 +39,5 @@ export type ApiResponse = {
     date_sold: string | null; // Assuming a date string, e.g., "2024-01-01"
     notes: string; // Empty strings are still valid strings
     image_url: string;
+    ace_label_url: string | null;
 };
