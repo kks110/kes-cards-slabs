@@ -40,7 +40,7 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 <div className="row">
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div style={{fontSize: "1.2rem"}}>
-                                            {slab.gradingCompany + " " + slab.grade.toFixed(1)}
+                                            {slab.gradingCompany + " " + slab.grade}
                                         </div>
                                         <div className="ms-auto"
                                              style={{"paddingLeft": slab.gradingCompany === "Ace" ? "24px" : ""}}>
@@ -51,22 +51,17 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                             </li>
                             <li className="list-group-item">
                                 <div className="row">
+                                    <div className="col-8"><strong>{SlabPrice(slab)}</strong></div>
+                                    <div className="col-4 text-end">{slab.dateSold}</div>
+                                </div>
+                            </li>
+                            <li className="list-group-item">
+                                <div className="row">
                                     <div className="col-8">{slab.setName}</div>
                                     <div className="col-4 text-end">{slab.cardNumber}</div>
                                 </div>
                             </li>
                             <li className="list-group-item">{CertVerificationLink(slab.certNumber, slab.gradingCompany)}</li>
-                            {slab.sold ? (
-                                slab.soldValue ? (
-                                    <li className="list-group-item">Sold for: £{slab.soldValue.toFixed(2)}</li>
-                                ) : (
-                                    <li className="list-group-item">{slab.notes}</li>
-                                )
-                            ) : (
-                                <>
-                                    <li className="list-group-item">{SlabPrice(slab)}</li>
-                                </>
-                            )}
                             {slab.listingURL && (
                                 <li className="list-group-item">
                                     <a href={slab.listingURL} target="_blank" rel="noreferrer">
@@ -79,20 +74,19 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                     </a>
                                 </li>
                             )}
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     );
 }
 
 const SlabPrice = (slab: Slab) => {
-    if (slab.price) {
-        return "Price: £" + slab.price.toFixed(2)
-    } else {
-        return slab.notes
+    if (slab.sold) {
+        return slab.soldValue ? `Sold for: £${slab.soldValue.toFixed(2)}` : slab.notes;
     }
+    return slab.price ? `£${slab.price.toFixed(2)}` : "Price Check";
 }
 
 const FlagSelector = (set: string) => {
