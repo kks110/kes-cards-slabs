@@ -18,6 +18,7 @@ export type Slab = {
     notes: string | null,
     imageURL: string,
     aceLabelURL: string | null,
+    listingURL: string | null,
 };
 
 export type ApiResponse = {
@@ -40,4 +41,5 @@ export type ApiResponse = {
     notes: string; // Empty strings are still valid strings
     image_url: string;
     ace_label_url: string | null;
+    listing_url: string | null;
 };

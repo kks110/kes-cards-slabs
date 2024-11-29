@@ -9,12 +9,14 @@ import CgcLogo from "@/images/cgc_logo.svg";
 import PsaLogo from "@/images/psa_logo.svg";
 import SgcLogo from "@/images/sgc_logo.svg";
 import BgsLogo from "@/images/bgs_logo.svg";
+import Ebay_logo from "@/images/ebay.svg";
 import styles from "@/styles/HideOnMobile.module.css";
 import SlabImage from "@/components/SlabImage";
 
+
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
-    if (slab.aceLabelURL) {
-        console.log("aceLabelURL: ", slab.aceLabelURL);
+    if (slab.listingURL) {
+        console.log("listing: ", slab.listingURL);
     }
 
     return (
@@ -38,7 +40,7 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 <div className="row">
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div style={{fontSize: "1.2rem"}}>
-                                            {slab.gradingCompany + " " + slab.grade}
+                                            {slab.gradingCompany + " " + slab.grade.toFixed(1)}
                                         </div>
                                         <div className="ms-auto"
                                              style={{"paddingLeft": slab.gradingCompany === "Ace" ? "24px" : ""}}>
@@ -64,6 +66,18 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 <>
                                     <li className="list-group-item">{SlabPrice(slab)}</li>
                                 </>
+                            )}
+                            {slab.listingURL && (
+                                <li className="list-group-item">
+                                    <a href={slab.listingURL} target="_blank" rel="noreferrer">
+                                        <Image
+                                            src={Ebay_logo}
+                                            alt="ebay_logo"
+                                            className="rounded p-1"
+                                            style={{maxWidth: 70, height: "auto"}}
+                                        />
+                                    </a>
+                                </li>
                             )}
                     </ul>
                 </div>

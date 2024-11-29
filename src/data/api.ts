@@ -31,6 +31,7 @@ export function mapApiResponseToSlab(apiResponse: ApiResponse): Slab {
         notes: apiResponse.notes || null,
         imageURL: apiResponse.image_url,
         aceLabelURL: apiResponse.ace_label_url,
+        listingURL: apiResponse.listing_url,
     };
 
     return mappedSlab;
