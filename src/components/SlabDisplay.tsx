@@ -15,10 +15,6 @@ import SlabImage from "@/components/SlabImage";
 
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
-    if (slab.listingURL) {
-        console.log("listing: ", slab.listingURL);
-    }
-
     return (
         <div className={`card mb-3 ${slab.sold || !slab.forSale ? "border-danger" : "border-success" }`}>
             <div className="row g-0">
