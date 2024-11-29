@@ -14,6 +14,7 @@ export default function Home() {
     const [selectedGradingCompany, setSelectedGradingCompany] = useState("");
     const [selectSold, setSelectSold] = useState(false);
     const [selectForSale, setSelectForSale] = useState(true);
+    const [selectOnEbay, setSelectOnEbay] = useState(false);
 
     const filteredSlabs = slabs.filter(slab => {
         const query = searchQuery.toLowerCase();
@@ -30,7 +31,15 @@ export default function Home() {
         const matchesGradingCompany = selectedGradingCompany ? slab.gradingCompany === selectedGradingCompany : true;
         const matchesSold = selectSold === slab.sold;
         const matchesForSale = selectForSale === slab.forSale;
-        return matchesGradeQuery && matchesSearchQuery && matchesLanguage && matchesFranchise && matchesGradingCompany && matchesSold && matchesForSale;
+        const matchesOnEbay = selectOnEbay ? slab.listingURL !== null : true;
+        return matchesGradeQuery &&
+            matchesSearchQuery &&
+            matchesLanguage &&
+            matchesFranchise &&
+            matchesGradingCompany &&
+            matchesSold &&
+            matchesForSale &&
+            matchesOnEbay;
     });
 
     useEffect(() => {
@@ -118,7 +127,7 @@ export default function Home() {
                               Sold
                           </label>
                       </div>
-                      <div className="form-check">
+                      <div className="form-check me-3">
                           <input
                               className="form-check-input"
                               type="checkbox"
@@ -127,6 +136,17 @@ export default function Home() {
                           />
                           <label className="form-check-label">
                               For Sale
+                          </label>
+                      </div>
+                      <div className="form-check me-3">
+                          <input
+                              className="form-check-input"
+                              type="checkbox"
+                              checked={selectOnEbay}
+                              onChange={e => setSelectOnEbay(e.target.checked)}
+                          />
+                          <label className="form-check-label">
+                              On Ebay
                           </label>
                       </div>
                   </div>
