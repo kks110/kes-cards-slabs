@@ -20,7 +20,7 @@ export function mapApiResponseToSlab(apiResponse: ApiResponse): Slab {
         setName: apiResponse.set_name,
         tcg: validateTcg(apiResponse.tcg),
         language: validateLanguage(apiResponse.language),
-        cost: apiResponse.cost,
+        slab_case: apiResponse.slab_case || null,
         gradingCompany: validateGradingCompany(apiResponse.grading_company),
         grade: apiResponse.grade,
         certNumber: Number(apiResponse.cert_number),

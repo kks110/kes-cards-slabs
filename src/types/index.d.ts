@@ -7,10 +7,10 @@ export type Slab = {
     setName: string,
     tcg: "Pokemon" | "Lorcana"
     language: "Jp" | "Eng" | "Kor",
-    cost: number,
     gradingCompany: "Ace" | "PSA" | "SGC" | "CGC" | "BGS"
     grade: number,
     certNumber: number,
+    slab_case: string | null;
     price: number | null,
     sold: boolean,
     soldValue: number | null,
@@ -30,10 +30,10 @@ export type ApiResponse = {
     set_name: string;
     tcg: string;
     language: string;
-    cost: number;
     grading_company: string;
     grade: number;
     cert_number: string; // This is a string in the JSON, but you may want to validate or convert it to a number
+    slab_case: string | null;
     price: number | null;
     sold: number; // Typically 0 or 1, representing a boolean in API responses
     sold_value: number | null;

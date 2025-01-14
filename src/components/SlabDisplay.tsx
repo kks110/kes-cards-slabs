@@ -58,18 +58,27 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
                                 </div>
                             </li>
                             <li className="list-group-item">{CertVerificationLink(slab.certNumber, slab.gradingCompany)}</li>
-                            {slab.listingURL && (
-                                <li className="list-group-item">
-                                    <a href={slab.listingURL} target="_blank" rel="noreferrer">
-                                        <Image
-                                            src={Ebay_logo}
-                                            alt="ebay_logo"
-                                            className="rounded p-1"
-                                            style={{maxWidth: 70, height: "auto"}}
-                                        />
-                                    </a>
-                                </li>
-                            )}
+                            <li className="list-group-item">
+                                <div className="row">
+                                    <div className="col-8">
+                                        {slab.listingURL && (
+                                            <a href={slab.listingURL} target="_blank" rel="noreferrer">
+                                                <Image
+                                                    src={Ebay_logo}
+                                                    alt="ebay_logo"
+                                                    className="rounded p-1"
+                                                    style={{maxWidth: 70, height: "auto"}}
+                                                />
+                                            </a>
+                                        )}
+                                    </div>
+                                    <div className="col-4 text-end">
+                                        {slab.slab_case && (
+                                            <strong className="align-middle">{slab.slab_case}</strong>
+                                        )}
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -108,12 +117,12 @@ const FlagSelector = (set: string) => {
 
 const GradingCompanyLogo = (gradingCompany: string) => {
     let image = AceLogo;
-    let style = { maxWidth: 60, maxHeight: 30, paddingLeft: "0" };
+    let style = {maxWidth: 60, maxHeight: 30, paddingLeft: "0"};
 
     switch (gradingCompany) {
         case "Ace":
             image = AceLogo
-            style = { ...style, paddingLeft: "24px" };
+            style = {...style, paddingLeft: "24px"};
             break;
         case "PSA":
             image = PsaLogo
