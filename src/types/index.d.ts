@@ -6,7 +6,7 @@ export type Slab = {
     cardNumber: string,
     setName: string,
     tcg: "Pokemon" | "Lorcana"
-    language: "Jp" | "Eng" | "Kor",
+    language: "Jp" | "Eng" | "Kor" | "Indo",
     gradingCompany: "Ace" | "PSA" | "SGC" | "CGC" | "BGS"
     grade: number,
     certNumber: number,

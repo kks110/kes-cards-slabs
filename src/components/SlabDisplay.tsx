@@ -4,6 +4,7 @@ import { Slab } from '@/types/index';
 import JapaneseFlag from "@/images/jp_flag.svg";
 import EnglishFlag from "@/images/eng_flag.svg";
 import KoreanFlag from "@/images/kor_flag.svg";
+import IndonesianFlag from "@/images/indo_flag.svg";
 import AceLogo from "@/images/ace_grading_logo.svg";
 import CgcLogo from "@/images/cgc_logo.svg";
 import PsaLogo from "@/images/psa_logo.svg";
@@ -105,6 +106,9 @@ const FlagSelector = (set: string) => {
             break;
         case "Kor":
             image = KoreanFlag
+        case "Indo":
+            image = IndonesianFlag
+            break;
     }
 
     return <Image
