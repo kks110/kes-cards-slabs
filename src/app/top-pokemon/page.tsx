@@ -11,7 +11,7 @@ export default function TopPokemon() {
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th>ID</th>
+                            <th>Pokedex number</th>
                             <th>Name</th>
                             <th>Votes</th>
                             <th>Top 6 Votes</th>

@@ -1348,7 +1348,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.011513714866237725,
         generation: 8,
         extra: "",
-        name: "hisuian zorua"
+        name: "hisuian zorua",
+        image_id: 10238
     },
     {
         votes: 3,
@@ -1446,7 +1447,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.01015916017609211,
         generation: 9,
         extra: "",
-        name: "iron valiant"
+        name: "iron valiant",
+        image_id: 1006
     },
     {
         votes: 8,
@@ -1535,7 +1537,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.01015916017609211,
         generation: 8,
         extra: "",
-        name: "hisuian samurott"
+        name: "hisuian samurott",
+        image_id: 10236
     },
     {
         votes: 3,
@@ -1714,7 +1717,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.008804605485946495,
         generation: 9,
         extra: "",
-        name: "slither wing"
+        name: "slither wing",
+        id: 988
     },
     {
         votes: 2,
@@ -1731,7 +1735,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.008465966813410091,
         generation: 8,
         extra: "",
-        name: "hisuian goodra"
+        name: "hisuian goodra",
+        image_id: 10242
     },
     {
         votes: 1,
@@ -1901,7 +1906,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0077886894683372844,
         generation: 8,
         extra: "",
-        name: "hisuian arcanine"
+        name: "hisuian arcanine",
+        image_id: 10230
     },
     {
         votes: 2,
@@ -2035,7 +2041,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.00745005079580088,
         generation: 9,
         extra: "",
-        name: "walking wake"
+        name: "walking wake",
+        id: 1009
     },
     {
         votes: 2,
@@ -2565,7 +2572,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.005418218760582459,
         generation: 8,
         extra: "",
-        name: "hisuian lilligant"
+        name: "hisuian lilligant",
+        image_id: 10237
     },
     {
         votes: 2,
@@ -2582,7 +2590,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.005079580088046055,
         generation: 8,
         extra: "",
-        name: "galarian ponyta"
+        name: "galarian ponyta",
+        image_id: 10162
     },
     {
         votes: 1,
@@ -2599,7 +2608,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.004740941415509651,
         generation: 8,
         extra: "",
-        name: "hisuian growlithe"
+        name: "hisuian growlithe",
+        image_id: 10229
     },
     {
         votes: 0,
@@ -2625,7 +2635,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.005756857433118863,
         generation: 1,
         extra: "",
-        name: "farfetch'd"
+        name: "farfetch'd",
+        id: 83
     },
     {
         votes: 4,
@@ -2732,7 +2743,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.004740941415509651,
         generation: 8,
         extra: "",
-        name: "galarian rapidash"
+        name: "galarian rapidash",
+        image_id: 10163
     },
     {
         votes: 1,
@@ -2911,7 +2923,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.004740941415509651,
         generation: 8,
         extra: "",
-        name: "sirfetch'd"
+        name: "sirfetch'd",
+        id: 865
     },
     {
         votes: 2,
@@ -3126,7 +3139,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0037250253979004403,
         generation: 9,
         extra: "",
-        name: "paldean wooper"
+        name: "paldean wooper",
+        image_id: 10253
     },
     {
         votes: 0,
@@ -3161,7 +3175,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0037250253979004403,
         generation: 9,
         extra: "",
-        name: "roaring moon"
+        name: "roaring moon",
+        id: 1005
     },
     {
         votes: 6,
@@ -3376,7 +3391,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0037250253979004403,
         generation: 9,
         extra: "",
-        name: "sandy shocks"
+        name: "sandy shocks",
+        id: 989
     },
     {
         votes: 1,
@@ -3447,7 +3463,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0033863867253640365,
         generation: 8,
         extra: "",
-        name: "galarian moltres"
+        name: "galarian moltres",
+        image_id: 10171
     },
     {
         votes: 6,
@@ -3752,7 +3769,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0030477480528276328,
         generation: 8,
         extra: "",
-        name: "hisuian decidueye"
+        name: "hisuian decidueye",
+        image_id: 10244
     },
     {
         votes: 0,
@@ -3769,7 +3787,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0030477480528276328,
         generation: 9,
         extra: "",
-        name: "flutter mane"
+        name: "flutter mane",
+        id: 987
     },
     {
         votes: 0,
@@ -3822,7 +3841,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.003386386725364037,
         generation: 8,
         extra: "",
-        name: "galarian slowbro"
+        name: "galarian slowbro",
+        image_id: 10165
     },
     {
         votes: 2,
@@ -3956,7 +3976,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.003047748052827633,
         generation: 7,
         extra: "mythical",
-        name: "tapu koko"
+        name: "tapu koko",
+        id: 785
     },
     {
         votes: 1,
@@ -3964,7 +3985,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.003047748052827633,
         generation: 7,
         extra: "mythical",
-        name: "tapu lele"
+        name: "tapu lele",
+        id: 786
     },
     {
         votes: 1,
@@ -3981,7 +4003,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.003047748052827633,
         generation: 9,
         extra: "",
-        name: "great tusk"
+        name: "great tusk",
+        id: 984
     },
     {
         votes: 1,
@@ -4250,7 +4273,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0023704707077548256,
         generation: 8,
         extra: "",
-        name: "galarian articuno"
+        name: "galarian articuno",
+        image_id: 10169
     },
     {
         votes: 0,
@@ -4312,7 +4336,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0023704707077548256,
         generation: 8,
         extra: "",
-        name: "hisuian braviary"
+        name: "hisuian braviary",
+        image_id: 10240
     },
     {
         votes: 0,
@@ -4950,7 +4975,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.002031832035218422,
         generation: 8,
         extra: "",
-        name: "hisuian sneasel"
+        name: "hisuian sneasel",
+        image_id: 10235
     },
     {
         votes: 1,
@@ -4976,7 +5002,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.002031832035218422,
         generation: 8,
         extra: "",
-        name: "galarian zigzagoon"
+        name: "galarian zigzagoon",
+        image_id: 10174
     },
     {
         votes: 1,
@@ -5011,7 +5038,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.002031832035218422,
         generation: 4,
         extra: "",
-        name: "mime jr."
+        name: "mime jr.",
+        id: 439
     },
     {
         votes: 1,
@@ -5055,7 +5083,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.002031832035218422,
         generation: 7,
         extra: "mythical",
-        name: "tapu fini"
+        name: "tapu fini",
+        id: 788
     },
     {
         votes: 1,
@@ -5090,7 +5119,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820183,
         generation: 9,
         extra: "",
-        name: "paldean tauros"
+        name: "paldean tauros",
+        image_id: 10250
     },
     {
         votes: 0,
@@ -5197,7 +5227,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820183,
         generation: 7,
         extra: "",
-        name: "type: null"
+        name: "type: null",
+        id: 772
     },
     {
         votes: 0,
@@ -5304,7 +5335,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820183,
         generation: 9,
         extra: "mythical",
-        name: "gouging fire"
+        name: "gouging fire",
+        id: 1020
     },
     {
         votes: 0,
@@ -5393,7 +5425,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820185,
         generation: 1,
         extra: "",
-        name: "nidoran♀"
+        name: "nidoran♀",
+        id: 29
     },
     {
         votes: 1,
@@ -5590,7 +5623,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820185,
         generation: 9,
         extra: "",
-        name: "scream tail"
+        name: "scream tail",
+        id: 985
     },
     {
         votes: 1,
@@ -5598,7 +5632,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820185,
         generation: 9,
         extra: "",
-        name: "iron bundle"
+        name: "iron bundle",
+        id: 991
     },
     {
         votes: 0,
@@ -5633,7 +5668,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0013545546901456147,
         generation: 8,
         extra: "",
-        name: "hisuian electrode"
+        name: "hisuian electrode",
+        image_id: 10232
     },
     {
         votes: 0,
@@ -5641,7 +5677,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0013545546901456147,
         generation: 8,
         extra: "",
-        name: "galarian weezing"
+        name: "galarian weezing",
+        image_id: 10167
     },
     {
         votes: 0,
@@ -5766,7 +5803,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0013545546901456147,
         generation: 8,
         extra: "",
-        name: "galarian darumaka"
+        name: "galarian darumaka",
+        image_id: 10176
     },
     {
         votes: 0,
@@ -5954,7 +5992,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0016931933626820183,
         generation: 1,
         extra: "",
-        name: "mr. mime"
+        name: "mr. mime",
+        id: 122
     },
     {
         votes: 2,
@@ -6241,7 +6280,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 8,
         extra: "",
-        name: "galarian meowth"
+        name: "galarian meowth",
+        image_id: 10161
     },
     {
         votes: 0,
@@ -6267,7 +6307,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 8,
         extra: "",
-        name: "galarian farfetch'd"
+        name: "galarian farfetch'd",
+        image_id: 10166
     },
     {
         votes: 0,
@@ -6293,7 +6334,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 8,
         extra: "",
-        name: "galarian mr. mime"
+        name: "galarian mr. mime",
+        image_id: 10168
     },
     {
         votes: 0,
@@ -6301,7 +6343,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 8,
         extra: "",
-        name: "galarian zapdos"
+        name: "galarian zapdos",
+        image_id: 10170
     },
     {
         votes: 0,
@@ -6345,7 +6388,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 8,
         extra: "",
-        name: "galarian slowking"
+        name: "galarian slowking",
+        image_id: 10172
     },
     {
         votes: 0,
@@ -6461,7 +6505,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 8,
         extra: "",
-        name: "galarian darmanitan"
+        name: "galarian darmanitan",
+        image_id: 10177
     },
     {
         votes: 0,
@@ -7009,7 +7054,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.001015916017609211,
         generation: 9,
         extra: "",
-        name: "iron treads"
+        name: "iron treads",
+        id: 990
     },
     {
         votes: 0,
@@ -7026,7 +7072,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 1,
         extra: "",
-        name: "nidoran♂"
+        name: "nidoran♂",
+        id: 32
     },
     {
         votes: 0,
@@ -7070,7 +7117,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 8,
         extra: "",
-        name: "hisuian voltorb"
+        name: "hisuian voltorb",
+        image_id: 10231
     },
     {
         votes: 0,
@@ -7105,7 +7153,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 8,
         extra: "",
-        name: "galarian corsola"
+        name: "galarian corsola",
+        image_id: 10173
     },
     {
         votes: 0,
@@ -7599,7 +7648,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 8,
         extra: "",
-        name: "mr. rime"
+        name: "mr. rime",
+        id: 866
     },
     {
         votes: 0,
@@ -7643,7 +7693,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 9,
         extra: "",
-        name: "iron thorns"
+        name: "iron thorns",
+        id: 995
     },
     {
         votes: 0,
@@ -7669,7 +7720,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 9,
         extra: "mythical",
-        name: "raging bolt"
+        name: "raging bolt",
+        id: 1021
     },
     {
         votes: 0,
@@ -7677,7 +7729,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0006772773450728074,
         generation: 9,
         extra: "mythical",
-        name: "iron crown"
+        name: "iron crown",
+        id: 1023
     },
     {
         votes: 0,
@@ -7919,7 +7972,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "galarian slowpoke"
+        name: "galarian slowpoke",
+        image_id: 10164
     },
     {
         votes: 0,
@@ -8008,7 +8062,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "hisuian qwilfish"
+        name: "hisuian qwilfish",
+        image_id: 10234
     },
     {
         votes: 0,
@@ -8331,7 +8386,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "galarian yamask"
+        name: "galarian yamask",
+        image_id: 10179
     },
     {
         votes: 0,
@@ -8447,7 +8503,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "galarian stunfisk"
+        name: "galarian stunfisk",
+        image_id: 10180
     },
     {
         votes: 0,
@@ -8491,7 +8548,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 6,
         extra: "",
-        name: "flabébé"
+        name: "flabébé",
+        id: 669
     },
     {
         votes: 0,
@@ -8517,7 +8575,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "hisuian sliggoo"
+        name: "hisuian sliggoo",
+        image_id: 10241
     },
     {
         votes: 0,
@@ -8525,7 +8584,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "hisuian avalugg"
+        name: "hisuian avalugg",
+        image_id: 10243
     },
     {
         votes: 0,
@@ -8596,7 +8656,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 8,
         extra: "",
-        name: "galarian linoone"
+        name: "galarian linoone",
+        image_id: 10175
     },
     {
         votes: 0,
@@ -8820,7 +8881,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 0,
         extra: "",
-        name: "iron hands"
+        name: "iron hands",
+        id: 992
     },
     {
         votes: 0,
@@ -8828,7 +8890,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 9,
         extra: "",
-        name: "iron moth"
+        name: "iron moth",
+        id: 994
     },
     {
         votes: 0,
@@ -8872,7 +8935,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0003386386725364037,
         generation: 9,
         extra: "",
-        name: "iron jugulis"
+        name: "iron jugulis",
+        id: 993
     },
     {
         votes: 1,
@@ -9393,7 +9457,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0,
         generation: 7,
         extra: "mythical",
-        name: "tapu bulu"
+        name: "tapu bulu",
+        id: 787
     },
     {
         votes: 0,
@@ -9626,7 +9691,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0,
         generation: 9,
         extra: "",
-        name: "brute bonnet"
+        name: "brute bonnet",
+        id: 986
     },
     {
         votes: 0,
@@ -9634,7 +9700,8 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0,
         generation: 9,
         extra: "",
-        name: "iron leaves"
+        name: "iron leaves",
+        id: 1010
     },
     {
         votes: 0,
@@ -9651,6 +9718,7 @@ export const topPokemonData: PokemonData[] = [
         average: 0.0,
         generation: 9,
         extra: "mythical",
-        name: "iron boulder"
+        name: "iron boulder",
+        id: 1022
     }
 ]
