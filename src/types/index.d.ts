@@ -43,3 +43,14 @@ export type ApiResponse = {
     ace_label_url: string | null;
     listing_url: string | null;
 };
+
+export type PokemonData = {
+    name: string;
+    votes: number;
+    top_6_votes: number;
+    average: number;
+    generation: number;
+    extra: string;
+    id?: number;
+    image_id?: number;
+}
