@@ -46,11 +46,14 @@ export type ApiResponse = {
 
 export type PokemonData = {
     name: string;
-    votes: number;
+    number_1_votes: number;
     top_6_votes: number;
     average: number;
     generation: number;
     extra: string;
     id?: number;
     image_id?: number;
+    number_1_vote_position: number;
+    top_6_vote_position: number;
+    average_vote_position: number;
 }
