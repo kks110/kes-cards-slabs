@@ -27,6 +27,7 @@ export function mapApiResponseToSlab(apiResponse: ApiResponse): Slab {
         price: apiResponse.price,
         sold: apiResponse.sold === 1,
         soldValue: apiResponse.sold_value,
+        postage_and_fees: apiResponse.postage_and_fees,
         dateSold: apiResponse.date_sold,
         notes: apiResponse.notes || null,
         imageURL: apiResponse.image_url,

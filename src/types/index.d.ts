@@ -14,6 +14,7 @@ export type Slab = {
     price: number | null,
     sold: boolean,
     soldValue: number | null,
+    postage_and_fees: number | null,
     dateSold: string | null,
     notes: string | null,
     imageURL: string,
@@ -37,6 +38,7 @@ export type ApiResponse = {
     price: number | null;
     sold: number; // Typically 0 or 1, representing a boolean in API responses
     sold_value: number | null;
+    postage_and_fees: number | null,
     date_sold: string | null; // Assuming a date string, e.g., "2024-01-01"
     notes: string; // Empty strings are still valid strings
     image_url: string;

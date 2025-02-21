@@ -90,7 +90,10 @@ const SlabDisplay = ({ slab }: { slab: Slab }) => {
 
 const SlabPrice = (slab: Slab) => {
     if (slab.sold) {
-        return slab.soldValue ? `Sold for: £${slab.soldValue.toFixed(2)}` : slab.notes;
+        if (slab.soldValue && slab.postage_and_fees) {
+            return `£${slab.soldValue.toFixed(2)} (£${(slab.soldValue - slab.postage_and_fees).toFixed(2)} after fees)`;
+        }
+        return slab.soldValue ? `£${slab.soldValue.toFixed(2)}` : slab.notes;
     }
     return slab.price ? `£${slab.price.toFixed(2)}` : "Price Check";
 }
