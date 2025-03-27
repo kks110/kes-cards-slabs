@@ -1,7 +1,7 @@
 
 export type Slab = {
     owner: "K" | "E" | "KES",
-    forSale: boolean,
+    personalCollection: boolean,
     cardName: string,
     cardNumber: string,
     setName: string,
@@ -25,7 +25,7 @@ export type Slab = {
 export type ApiResponse = {
     id: number;
     owner: string;
-    for_sale: number; // Typically 0 or 1, representing a boolean in API responses
+    personal_collection: number; // Typically 0 or 1, representing a boolean in API responses
     card_name: string;
     card_number: string;
     set_name: string;

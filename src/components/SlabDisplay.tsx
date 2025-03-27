@@ -17,7 +17,7 @@ import SlabImage from "@/components/SlabImage";
 
 const SlabDisplay = ({ slab }: { slab: Slab }) => {
     return (
-        <div className={`card mb-3 ${slab.sold || !slab.forSale ? "border-danger" : "border-success" }`}>
+        <div className={`card mb-3 ${slab.sold || slab.personalCollection ? "border-danger" : "border-success" }`}>
             <div className="row g-0">
                 < SlabImage slab={slab} />
                 <div className="col-md-9">

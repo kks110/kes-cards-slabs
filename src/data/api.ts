@@ -14,7 +14,7 @@ export function mapApiResponseToSlab(apiResponse: ApiResponse): Slab {
 
     const mappedSlab: Slab = {
         owner: validateOwner(apiResponse.owner),
-        forSale: apiResponse.for_sale === 1,
+        personalCollection: apiResponse.personal_collection === 1,
         cardName: apiResponse.card_name,
         cardNumber: apiResponse.card_number,
         setName: apiResponse.set_name,

@@ -13,7 +13,7 @@ export default function Home() {
     const [selectedFranchise, setSelectedFranchise] = useState("");
     const [selectedGradingCompany, setSelectedGradingCompany] = useState("");
     const [selectSold, setSelectSold] = useState(false);
-    const [selectForSale, setSelectForSale] = useState(true);
+    const [selectPersonCollection, setSelectPersonCollection] = useState(false);
     const [selectOnEbay, setSelectOnEbay] = useState(false);
     const [maxPrice, setMaxPrice] = useState(100000000);
 
@@ -31,7 +31,7 @@ export default function Home() {
         const matchesFranchise = selectedFranchise ? slab.tcg === selectedFranchise : true;
         const matchesGradingCompany = selectedGradingCompany ? slab.gradingCompany === selectedGradingCompany : true;
         const matchesSold = selectSold === slab.sold;
-        const matchesForSale = selectForSale === slab.forSale;
+        const matchesPersonalCollection = selectPersonCollection === slab.personalCollection;
         const matchesOnEbay = selectOnEbay ? slab.listingURL !== null : true;
         const matchesMaxPrice = slab.price ? slab.price <= maxPrice : true;
         return matchesGradeQuery &&
@@ -40,7 +40,7 @@ export default function Home() {
             matchesFranchise &&
             matchesGradingCompany &&
             matchesSold &&
-            matchesForSale &&
+            matchesPersonalCollection &&
             matchesOnEbay &&
             matchesMaxPrice;
     });
@@ -167,11 +167,11 @@ export default function Home() {
                             <input
                                 className="form-check-input"
                                 type="checkbox"
-                                checked={selectForSale}
-                                onChange={e => setSelectForSale(e.target.checked)}
+                                checked={selectPersonCollection}
+                                onChange={e => setSelectPersonCollection(e.target.checked)}
                             />
                             <label className="form-check-label">
-                                For Sale
+                                Personal Collection
                             </label>
                         </div>
                         <div className="form-check me-3">
